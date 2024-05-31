@@ -14,6 +14,7 @@ import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -22,7 +23,8 @@ import { ToastModule } from 'primeng/toast';
   declarations: [
     AppComponent,
     LoginComponent,
-    PartyManagementComponent
+    PartyManagementComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

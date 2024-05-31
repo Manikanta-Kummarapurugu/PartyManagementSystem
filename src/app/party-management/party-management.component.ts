@@ -4,6 +4,7 @@ import { PartyService } from '../service/PartyService';
 import { PostPartyService } from '../service/post-party.service';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class PartyManagementComponent implements OnInit {
   editedProduct: any = {};
   result: any;
   dataadd: any;
-  constructor(public partyService: PartyService, private ppsc: PostPartyService, private http: HttpClient, private msg: MessageService) { }
+  constructor(public partyService: PartyService, private ppsc: PostPartyService, private http: HttpClient, private msg: MessageService,private router:Router) { }
 
 
   ngOnInit(): void {
@@ -37,7 +38,9 @@ export class PartyManagementComponent implements OnInit {
     this.getPartyData()
 
   }
-
+  logout(){
+    this.router.navigate(['/login'])
+  }
   getPartyData(): void {
     this.http.get('assets/postman-collection.json').subscribe((data: any) => {
       // Extracting only the "PARTY" data from the JSON response
